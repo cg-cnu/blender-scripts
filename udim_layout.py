@@ -15,13 +15,7 @@ bl_info = {
     "author": "Sreenivas Alapati",
     "version": (1, 0),
     "blender": (2, 65, 0),
-    "location": "",
-    "warning": "",
-    "wiki_url": ""
-                "",
-    "tracker_url": ""
-                   "",
-    "category": "Alapati"}
+    "category": "UV"}
 
 import bpy
 
