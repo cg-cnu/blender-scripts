@@ -1,6 +1,13 @@
 # Wireframe on shaded
 # Toggle the display of wireframe on the objects visible in the viewport
-# written by Sreenivas Alapati
+
+bl_info = {
+    "name": "Wireframe on shaded",
+    "description": " Toggle wireframe on shaded with shift + W ",
+    "author": "Sreenivas Alapati",
+    "version": (1, 0),
+    "blender": (2, 65, 0),
+    "category": "3D View"}
 
 import bpy
 

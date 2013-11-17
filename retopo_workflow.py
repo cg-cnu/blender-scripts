@@ -1,8 +1,17 @@
 '''
-Just to improve and automate the workflow of retopo
-put all the necessary things in one click
+Automate the below workflow
 http://cgcookie.com/blender/2011/08/08/retopology-with-the-bsurfaces-add-on/
+Install the addon and in 3d view press space and type retopo workflow.
 '''
+
+bl_info = {
+    "name": "Retopo Workflow",
+    "description": " setup and automate the retopo workflow ",
+    "author": "Sreenivas Alapati",
+    "version": (1, 0),
+    "blender": (2, 65, 0),
+    "category": "Mesh"}
+
 import bpy 
 
 C = bpy.context
