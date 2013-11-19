@@ -2,15 +2,17 @@
 # Divide the object to multiple parts.
 # Assign the mtl groups to each part.
 # unwrap the parts and place the uvlayouts on top of each other in 0 to 1 uv space.
-
+#
 # go to edit mode.
+# deselect the mesh
 # Keep the mouse in uv Editor and press Shift + U.
-
+#
 # Based on the mtl groups this will create the udim layout.
 # creates a new uvLayout with the name "_UVMap_Mari" preceding it.
+#
 
 bl_info = {
-    "name": "UDIM uv layout",
+    "name": "UDIM UV Layout",
     "description": " Layout uvs in the mari style - UDIM.",
     "author": "Sreenivas Alapati",
     "version": (1, 0),
@@ -21,10 +23,10 @@ import bpy
 
 def main(context):
 
-    Obj = bpy.context.object
-    Ops = bpy.ops
+    C = bpy.context
+    O = bpy.ops
 
-    object_active = bpy.context.active_object
+    object_active = C.active_object
     object_data = bpy.data.objects[object_active.name].data
 
     # get the list of the material sot items.
@@ -32,28 +34,28 @@ def main(context):
     slot = x_tran = y_tran = 0
 
     # add  new uv Map 
-    Ops.mesh.uv_texture_add()
+    O.mesh.uv_texture_add()
 
     # rename it to the objectName_uvMap_Mari
-    object_data.uv_textures.active.name = object.name + '_UVMap_Mari' 
+    object_data.uv_textures.active.name = C.object.name + '_UVMap_Mari' 
 
     # iterate through the list of material slots
     while slot < material_slots:
 
         # set the index of the mtl to the current active mtl
-        Obj.active_material_index = slot
+        C.object.active_material_index = slot
 
         # select the vertices from the current mtl slot
-        Ops.object.material_slot_select()
+        O.object.material_slot_select()
 
         # select the uvs from the vertices
-        Ops.uv.select_all()    
+        O.uv.select_all()    
 
         # Move the uv layout to the next grid
-        Ops.transform.translate(value=(x_tran, y_tran, 0))
+        O.transform.translate(value=(x_tran, y_tran, 0))
 
         # deselect the selected mtl slot
-        Ops.object.material_slot_deselect()
+        O.object.material_slot_deselect()
 
         # increase slot 
         slot += 1
