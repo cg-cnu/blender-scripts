@@ -1,16 +1,16 @@
-BlenderScripts
-==============
+#BlenderScripts#
 
-my blender scripts
+##Overview##
+my blender scripts and addons
 
-1 # Polycount Display
+###Polycount Display###
 
-2 # Retopo Workflow
+###Retopo Workflow###
 
-3 # Udim Layout
+###Udim Layout###
 
-4 # Wireframe on Shaded
+###Wireframe on Shaded###
 
-5 # Unwrap Multi Objects
+###Unwrap Multi Objects###
 
-6 # Converting XYZ to Blender Axis
+###Converting XYZ to Blender Axis###
